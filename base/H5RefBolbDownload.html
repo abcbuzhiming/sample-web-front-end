@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>H5下A标签二进制流本地下载</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            console.log('hello html');
+            $('#create').click(function() {
+                var url = URL.createObjectURL(
+                    new Blob(["abcd"], {
+                        "type": "text/plain"
+                    })
+                );
+                var downA = document.createElement("A");
+                downA.innerHTML = "请点击";
+                downA.href = url;
+                downA.download = "data.txt";
+                document.body.appendChild(downA);
+                //downA.click();
+            });
+        });
+    </script>
+</head>
+
+<body>
+    在H5下，A标签的href能使用二进制流内容，点击直接在本地保存文件,要求浏览器支持H5和Blob<br/>
+    <input id="create" type=button value="新增a连接" />
+</body>
