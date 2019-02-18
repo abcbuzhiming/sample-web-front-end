@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用layui</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<body>
+ 
+<!-- 你的HTML代码 -->
+ <!-- 如何定义一个layui插件的范例 -->
+<script src="./layui/layui.js"></script>
+<script>
+
+/**
+ * 定义插件,这种定义方式无法用use加载
+*/
+layui.define(['layer'],function(exports){
+  //do something
+  console.log('定义插件时做了工作');
+  //插件必须是一个函数对象
+  var myplug = function(){
+    
+  };
+  //给插件增加成员属性，可以是函数，可以是变量
+  myplug.fun1 = function(str){
+    //alert('插件输出:' + str);
+    layer.msg('插件输出:' + str);
+  }
+  //输出这个插件，第一个参数就是名称，第二个是插件对象本身
+  exports('myplug', myplug);
+});
+
+
+
+//一般直接写在一个js文件中
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer
+  ,form = layui.form;
+  var myplug = layui.myplug;
+  myplug.fun1('第一次尝试');
+  //demo.demo();
+  //layer.msg('Hello World');
+});
+</script> 
+</body>
+</html>

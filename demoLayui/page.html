@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用layui</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+<div id="page7"></div>
+
+</br>
+
+<input type="button" id='change' value='change' />
+
+<body>
+
+  <!-- 你的HTML代码 -->
+
+  <script type="text/javascript" src="./layui/layui.js"></script>
+  <script type="text/javascript">
+    //一般直接写在一个js文件中
+    layui.use(['jquery', 'laypage', 'layer'], function () {
+      $ = layui.jquery;
+      var laypage = layui.laypage
+        , layer = layui.layer;
+      laypage.render({
+        elem: 'page7'
+        , count: 100
+        , layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+        , jump: function (obj, first) {
+          if (first) {
+            return;
+          }
+          console.log(obj);
+        }
+      });
+      //laypage插件可以重复渲染
+      $(function () {
+        $('#change').click(function () {
+          //console.log(laypage.config);
+          laypage.render({
+            elem: 'page7'
+            , count: 55
+            , curr:3
+            , layout: ['count', 'prev', 'page', 'next', 'skip']
+            , jump: function (obj, first) {
+              if (first) {
+                return;
+              }
+              console.log(obj);
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

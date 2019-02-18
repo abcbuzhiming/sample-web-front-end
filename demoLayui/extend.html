@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用layui</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+
+<body>
+
+  <!-- 你的HTML代码 -->
+  <!-- 引用一个自定义组件的方法 -->
+  <script src="./layui/layui.js"></script>
+  <script>
+
+
+    //配置layui
+    layui.config({
+      base: 'app/'
+    }).extend({
+      myplug: 'myplug'
+    });
+
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'myplug'], function () {
+      var layer = layui.layer
+        , form = layui.form;
+      var myplug = layui.myplug;
+      myplug.fun1('第一次尝试');
+      //demo.demo();
+      //layer.msg('Hello World');
+    });
+  </script>
+</body>
+
+</html>

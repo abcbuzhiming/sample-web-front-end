@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用layui</title>
+  <link rel="stylesheet" href="./layui/css/layui.css">
+</head>
+
+<body>
+  <div class="layui-canvs"></div>
+  <!-- 你的HTML代码 -->
+  <!-- 引用一个自定义组件的方法 -->
+  <script src="./layui/layui.js"></script>
+  <script>
+
+
+    //配置layui
+    layui.config({
+      base: 'app/'
+    }).extend({
+      jparticle: 'jparticle.jquery'
+    });
+
+    //一般直接写在一个js文件中
+    layui.use(['jquery','layer', 'form', 'jparticle'], function () {
+      var layer = layui.layer
+        , form = layui.form;
+      var $ = layui.jquery;
+      var jparticle = layui.jparticle;
+      jparticle($);
+      $(".layui-canvs").jParticle({
+        background: "#141414",
+        color: "#E6E6E6"
+      });
+      //layer.msg('Hello World');
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.js"></script>
+    <title>ajax请求别的页面</title>
+    <script type="text/javascript">
+        $(function() {
+            //alert('hello world');
+            console.log('hello ajax请求别的页面');
+            var url = "https://h5.youzan.com/v2/showcase/emptypage?kdt_id=191";
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "html",
+                success: function(result) {
+                    console.log(result);
+                    //正则表达式获取body块
+                    var reg = /[\s\S]*<\/body>/g;
+                    var html = reg.exec(result)[0];
+                    //然后用filter来筛选对应块对象，如：class='aa'
+                    var aa = $(html).filter(".aa");
+                    var aahtml = aa.html();
+                    console.log(aahtml);
+                    //获取内容后可以插入当前html中。。。
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- 你的HTML代码 -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>运动项目信息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //alert('hello world');
+            console.log('html:' + $("input[type='checkbox'][name='boolOpen'][value='" + '1-1' + "']").html());
+        });
+    </script>
+</head>
+
+<body>
+    <div class="layui-table-cell laytable-cell-2-5">
+        <input type="checkbox" name="boolOpen" value="1-1" lay-skin="switch" lay-text="开|关" lay-filter="switchGamesProject" checked="">
+        <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch">
+            <em>开1</em>
+            <i></i>
+        </div>
+        <a class="layui-btn layui-btn-normal layui-btn-sm" lay-event="gamesProjectConfig">项目配置</a>
+    </div>
+    <div class="layui-table-cell laytable-cell-2-5">
+        <input type="checkbox" name="boolOpen" value="1-1" lay-skin="switch" lay-text="开|关" lay-filter="switchGamesProject" checked="">
+        <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch">
+            <em>关</em>
+            <i></i>
+        </div>
+        <a class="layui-btn layui-btn-normal layui-btn-sm" lay-event="gamesProjectConfig">项目配置</a>
+    </div>
+</body>
+

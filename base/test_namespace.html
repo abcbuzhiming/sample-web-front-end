@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>js函数变量作用域测试</title>
+</head>
+<body>
+ 
+<!-- 你的HTML代码 -->
+ 
+
+<script type="text/javascript">
+//一般直接写在一个js文件中
+var NSPageTeacher = window.NSPageTeacher || {};
+NSPageTeacher = new function () {
+	var self = this;
+	self.abc = '123123';   //定义api接口地址：用户列表
+	self.ddd = "asdasdasd";
+};
+
+NSPageTeacher = window.NSPageTeacher
+NSPageTeacher = new function () {
+	var self = this;
+	self.eee = "asd123123";
+}
+console.log(NSPageTeacher.abc);
+</script> 
+</body>
+</html>
