@@ -56,9 +56,27 @@ navigation、extra 宽度25%，分居content两侧，左侧navigation，右侧ex
         }
 
         /*布局*/
-        #wrapper{
-            float: left;
+        #wrapper {
+            float: left;        /*向左浮动，宽度占据百分百*/
             width: 100%;
+        }
+
+        #content {
+            margin: 0 25%;      /*左右设置外边距25%，也就是中间保持50%*/
+        }
+
+        #navigation {
+            float: left;
+            width: 25%;         /*宽度限定为25%*/
+            margin-left: -100%;     /*左向负外边距，在浮动情况下，会向左移动设定的宽度，如果本身已经在左侧边缘，就会移动到上一行，并在上一行向左侧移动设定的距离*/
+        }
+        #extra{
+            float: left;
+            width: 25%;         /*宽度限定为25%*/
+            margin-left: -25%;
+        }
+        #footer{
+            clear:left
         }
     </style>
 </head>
