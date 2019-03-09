@@ -1,9 +1,12 @@
 <!-- 
 三栏布局
+
 三个部分，分别是wrapper、navigation、extra
+
 要求：
-wrapper 居中且占据50%宽度
-navigation、extra 宽度25%，分居content两侧，左侧navigation，右侧extra
+
+wrapper 居中且宽度自适应，margin-left及margin-right为200px
+navigation、extra 宽度200px，分别位于content两侧
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -56,11 +59,10 @@ navigation、extra 宽度25%，分居content两侧，左侧navigation，右侧ex
         }
 
         /*布局*/
-        #container{ width: 700px; margin: 0 auto;}
-        #wrapper{ float: left;}
-        #content{ width: 400px; margin-left: 150px;}
-        #navigation{ float: left; width: 150px; margin-left: -550px; }
-        #extra{ float: left; width: 150px; }
+        #wrapper{ float: left; width: 100%;}
+	    #content{ margin: 0 200px;}
+        #navigation{ float: left; width: 200px; margin-left: -100%;}
+        #extra{ float: left; width: 200px; margin-left: -200px;}
         #footer{
             clear:left
         }
