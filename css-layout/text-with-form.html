@@ -11,11 +11,11 @@
         /*基本样式*/
         form {
             border: solid 1px blue;
-			
+			height:300px;
         }
 
 		label{
-			/*border: solid 1px red;*/
+			border: solid 1px red;
 			width: 1000px;
 			text-align: right;
 			vertical-align:middle;
@@ -28,16 +28,22 @@
         	/*border: solid 1px red;*/
 			vertical-align:middle;
 			font-size: 20px;
-			/*height: 20px;*/
+			height: 30px;
         }
+		/*设置placeholder中的字体样式*/
 		input::-webkit-input-placeholder{
-			height: 20px;line-height: 20px
+			/*height: 20px;
+			line-height: 20px*/
 			/*color: red;*/
 		}
     </style>
 </head>
 
 <body>
+	<p>这里演示的是行级文字和表单元素进行对齐的方案，注意，input默认有padding:1px 0;border-width:2px属性。</br>
+	placeholder的字体高度天生就偏高一点，这个问题似乎是无解的</br>
+	注意input的默认字体和其它行级元素不一样大，这是导致默认状态下他们高度大小不一样的原因
+	</p>
     <form action="" method="">
 		
     	<label>请输入姓名:</label><input type="text" name="" id="" value="" placeholder="名"/>
