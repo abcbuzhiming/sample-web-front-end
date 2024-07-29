@@ -1,0 +1,54 @@
+<!-- 
+Flex布局测试
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                display: flex;
+            }
+            #left {
+                width: 200px; /* 固定宽度 */
+                background-color: lightgray; /* 浅灰色 */
+                flex-shrink: 0; /* 防止缩小 */
+                display: flex; /* 内部使用Flexbox布局 */
+                flex-direction: column; /* 垂直布局 */
+            }
+            #left-top {
+            background-color: #D3D3D3; /* 上边部分的背景颜色 */
+            /* 上边部分的高度由其内容决定 */
+            }
+
+            #left-bottom {
+                flex-grow: 1; /* 占据剩余空间 */
+                background-color: #C0C0C0; /* 下边部分的背景颜色 */
+            }
+
+            #right {
+                flex-grow: 1; /* 占据剩余空间 */
+                background-color: white; /* 右侧背景颜色 */
+            }
+         </style> 
+
+    </head>
+    <body>
+        <div id="left">
+            <div id="left-top">
+                <!-- 上边部分的内容 -->
+                <p>This is the top part of the left column.</p>
+            </div>
+            <div id="left-bottom">
+                <!-- 下边部分的内容 -->
+                <p>This is the bottom part of the left column.</p>
+            </div>
+        </div>
+        <div id="right"></div>
+    </body>
+</html>
